@@ -1,1 +1,62 @@
 
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>password</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #101827;
+      color: white;
+      display: grid;
+      place-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+    .card {
+      background: #202d42;
+      padding: 28px;
+      border-radius: 16px;
+      width: min(300px, 80%);
+      text-align: center;
+    }
+    input, button {
+      box-sizing: border-box;
+      width: 100%;
+      padding: 12px;
+      margin-top: 12px;
+      border-radius: 8px;
+    }
+    input { border: 1px solid #64748b; }
+    button {
+      background: #60a5fa;
+      border: 0;
+      cursor: pointer;
+    }
+    #message { color: #a7f3d0; }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <h2>Username</h2>
+    <p>Password</p>
+    <input id="username"
+      placeholder="User and Password"
+      autocomplete="off">
+    <button id="demo">Sent</button>
+    <p id="message" aria-live="polite"></p>
+  </main>
+
+  <script>
+    document.querySelector("#demo").addEventListener("click", () => {
+      const name = document.querySelector("#username").value.trim();
+      document.querySelector("#message").textContent =
+        name ? "สวัสดี " + name + " นี่คือเว็บทดลอง!" :
+        "ลองพิมพ์ชื่อสมมติก่อนนะ";
+    });
+  </script>
+</body>
+</html>
+
